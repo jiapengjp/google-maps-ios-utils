@@ -101,6 +101,10 @@ static const double kGMUClusterWaitIntervalSeconds = 0.2;
   _clusters = clusters;
 }
 
+- (NSArray<id<GMUCluster>> *)getCluster {
+  return _clusters;
+}
+
 #pragma mark GMSMapViewDelegate
 
 - (BOOL)mapView:(GMSMapView *)mapView didTapMarker:(GMSMarker *)marker {

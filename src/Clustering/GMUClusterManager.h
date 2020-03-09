@@ -128,6 +128,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)cluster;
 
+
+- (NSArray<id<GMUCluster>> *)getCluster;
+
 @end
 
 
