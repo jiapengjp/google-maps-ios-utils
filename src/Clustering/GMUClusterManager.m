@@ -40,6 +40,9 @@ static const double kGMUClusterWaitIntervalSeconds = 0.2;
 
   // Renderer.
   id<GMUClusterRenderer> _renderer;
+    
+  // Clusters of current zoom
+  NSArray<id<GMUCluster>> *_clusters;
 }
 
 - (instancetype)initWithMap:(GMSMapView *)mapView
@@ -95,6 +98,7 @@ static const double kGMUClusterWaitIntervalSeconds = 0.2;
   NSArray<id<GMUCluster>> *clusters = [_algorithm clustersAtZoom:integralZoom];
   [_renderer renderClusters:clusters];
   _previousCamera = _mapView.camera;
+  _clusters = clusters;
 }
 
 #pragma mark GMSMapViewDelegate
